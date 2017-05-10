@@ -8,6 +8,8 @@ var express = require('express'),
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/Tododb'); 
 
+app.use(express.static(__dirname + "/."));
+app.use(express.static('public'))
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
